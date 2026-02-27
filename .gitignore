@@ -1,0 +1,9 @@
+# class files and txt files ignored
+/.metadata/
+*.class
+*.txt
+*.json
+.classpath
+.project
+/bin/*
+/.settings/*
