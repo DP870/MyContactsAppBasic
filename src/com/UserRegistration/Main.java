@@ -17,6 +17,8 @@ public class Main {
 		Scanner sc = new Scanner(System.in); 
 		int loop=1;
 		UserMemory usermemory=new UserMemory();  
+		 contactsmap mapping = new contactsmap();
+		 
 		while (loop==1) {
 			
 			//MENU 
@@ -78,9 +80,11 @@ public class Main {
 			}
 			
 			else {
+			int ch2=1;
+			while (ch2==1) {
 			System.out.println("1.Add Contact");
-			
-			
+			System.out.println("2.View Contacts");
+			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
 			if (ch==1) {
@@ -93,16 +97,20 @@ public class Main {
 		        String email = sc.next();
 		
 		        contacts newcontact = new contacts(name, phone, email);
-		        contactsmap mapping = new contactsmap();
+		       
 		        mapping.add(Username, newcontact);
 		
 		        System.out.println("Contact added");
-}
+}			
+			else if (ch==2) {
+				System.out.println(mapping.viewcontacts(Username));
+			}
 			}
 
 			System.out.println("Do you want to exit ?(0/1)");
 			loop=sc.nextInt();
 			
+		}
 		}
 			
 			// PROFILE MANAGEMENT 

@@ -39,4 +39,9 @@ public class contacts {
 		this.email = email;
 	}
 
+	public String toString() {
+    return name + " - " + phone + 
+           (email == null ? "" : (" | " + email));
+}
+
 }
