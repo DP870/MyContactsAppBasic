@@ -2,37 +2,35 @@ package com.UserRegistration;
 // Started implementation of BasicAuth
 public class BasicAuth implements Authentication {
 
-    private RegisteredUser registeredUser;
-
-    public BasicAuth(RegisteredUser user) {
+    private final RegisteredUser registeredUser;
+    private final UserMemory memory;
+    
+    //CONSTRUCTOR INJECTION
+    // THIS IS DONE TO MAKE SURE THE SAME HASHMAP IS USED AND A NEW ONE IS NOT CREATED.
+    // this. makes it clear to the class and other methods where to get the data for the registered user and memory from.
+    public BasicAuth(RegisteredUser user,UserMemory usermemory) { 
         this.registeredUser = user;
+        this.memory=usermemory;
     }
-/*
-   * @Override   //Method Overriding 
-    *
-    *public void login(String username, String password) {
-    *		return;
-    *}
-     * if (!registeredUser.getUsername().equals(username)) {
-     *       System.out.println("Invalid username!");
-      *      return false;
-      *  }
-       * if (!PasswordValidator.isValid(password)) {
-       *     System.out.println("Password does not meet security criteria!");
-       *     return false;
-       * }
-       * if (!registeredUser.getPassword().equals(password)) {
-       *     System.out.println("Incorrect password!");
-       *     return false;
-       * }
-       * System.out.println("Login successful!");
-       * return true;
-    *}
-    */
 
-	@Override
-	public boolean login(String username, String password) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+   @Override   //Method Overriding 
+    
+   public boolean login(String username, String password) {
+	   
+    if (!registeredUser.getUsername().equals(username)) {
+          System.out.println("Invalid username!");
+         return false;
+    }
+    if (!registeredUser.getPassword().equals(password)) {
+        System.out.println("Incorrect password!");
+       return false;
+    }
+    if (memory.exists(username)){
+    	System.out.println("Login successful!");
+     return true;
+    }
+    return false;
 }
+}
+    
+
