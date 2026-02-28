@@ -84,6 +84,7 @@ public class Main {
 			while (ch2==1) {
 			System.out.println("1.Add Contact");
 			System.out.println("2.View Contacts");
+			System.out.println("3.Delete Contacts");
 			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
@@ -104,6 +105,16 @@ public class Main {
 }			
 			else if (ch==2) {
 				System.out.println(mapping.viewcontacts(Username));
+			}
+			else if (ch==3) {
+				System.out.println("Name of contact to be deleted");
+				String del=sc.next();
+				if (mapping.delete(Username, del)) {
+					System.out.println("Deleted Successfully");
+				}
+				else {
+					System.out.println("Delete Unsucessful");
+				}
 			}
 			}
 

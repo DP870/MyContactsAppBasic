@@ -19,5 +19,24 @@ public class contactsmap {
 	    List<contacts> listofcontacts = savedcontacts.get(username);
 	    return listofcontacts; 
 	}
+// Deleting a Contact
+public boolean delete(String username, String name) {
+        
+        List<contacts> listofcontacts = savedcontacts.get(username);
+        if (listofcontacts == null || name == null) {
+        	return false;
+        }
+
+        for (int i = 0; i < listofcontacts.size(); i++) {
+            contacts c = listofcontacts.get(i);
+            if (c.getName().equals(name)) {
+                listofcontacts.remove(i);     
+                return true;        
+            }
+        }
+        return false; 
+    }
+
+	
 	
 	}
