@@ -22,7 +22,7 @@ public class UserMemory {
     
     //FIND USER
     public RegisteredUser find(String username) {
-        return users.get(username);
+        return users.get(username);  //Returns the RegisteredUser details [Registered User details] 
     }
     
     //Update Password

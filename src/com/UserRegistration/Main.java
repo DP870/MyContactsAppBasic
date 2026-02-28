@@ -1,6 +1,6 @@
 /*
  * My Contacts App Using Basic OOPS Concepts
- * UC3 - This use case deals with user profile management and the creation of change password class.
+ * UC4 - This use case allows the logged in user to view contact details.
  * 
  * 
  * author Dhruv
@@ -10,6 +10,7 @@
 
 package com.UserRegistration;
 import java.util.*;
+import com.contacts.*;
 
 public class Main {
 	public static void main(String[] args) {
@@ -22,7 +23,6 @@ public class Main {
 			System.out.println("My Contacts App");
 			System.out.println("1. User Registration");
 			System.out.println("2. User Login");   
-			//User Login to be implemented in this update.
 			System.out.println("3. Profile Management"); 
 			System.out.println("0. Exit");
 
@@ -54,6 +54,8 @@ public class Main {
 				else {
 					System.out.println("Password does not match. Please try again! ");
 				}
+	
+			
 			System.out.println("Do you want to exit ?");
 			loop=sc.nextInt();
 			}
@@ -70,7 +72,34 @@ public class Main {
 			RegisteredUser user = usermemory.find(Username);
 			Authentication auth = new BasicAuth(user,usermemory);
 			
-			auth.login(Username, Password);
+			if (!auth.login(Username, Password)) {
+				System.out.println("Wrong Username/Password");
+				
+			}
+			
+			else {
+			System.out.println("1.Add Contact");
+			
+			
+			
+			int ch=sc.nextInt();
+			if (ch==1) {
+				System.out.println("Add a contact:");
+		        System.out.print("Name: ");
+		        String name = sc.next();
+		        System.out.print("Phone: ");
+		        String phone = sc.next();
+		        System.out.print("Email ");
+		        String email = sc.next();
+		
+		        contacts newcontact = new contacts(name, phone, email);
+		        contactsmap mapping = new contactsmap();
+		        mapping.add(Username, newcontact);
+		
+		        System.out.println("Contact added");
+}
+			}
+
 			System.out.println("Do you want to exit ?(0/1)");
 			loop=sc.nextInt();
 			
