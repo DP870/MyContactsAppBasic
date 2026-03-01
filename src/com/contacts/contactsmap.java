@@ -1,5 +1,6 @@
 package com.contacts;
 import java.util.*;
+
 public class contactsmap {
 	//HashMap: username -> [list of contacts]
 	private HashMap<String, List<contacts>> savedcontacts = new HashMap<>();
@@ -37,6 +38,27 @@ public boolean delete(String username, String name) {
         return false; 
     }
 
+
+// Editing a contact
+public boolean edit(String username,String name,contacts updated) {      // Name is the contact to be edited.
+	List <contacts> listofcontacts=savedcontacts.get(username);
+	if (listofcontacts == null || name == null) {
+    	return false;
+    }
+	
+	for (int i = 0; i < listofcontacts.size(); i++) {
+        contacts c = listofcontacts.get(i);
+        if (c.getName().equals(name)) {
+            listofcontacts.remove(i);     
+            listofcontacts.add(updated);
+            return true;        
+        }
+       
+}
+	return false;
+	
+
 	
 	
 	}
+}

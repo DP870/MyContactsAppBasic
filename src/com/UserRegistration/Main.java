@@ -85,6 +85,7 @@ public class Main {
 			System.out.println("1.Add Contact");
 			System.out.println("2.View Contacts");
 			System.out.println("3.Delete Contacts");
+			System.out.println("4.Update Contacts");
 			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
@@ -114,6 +115,23 @@ public class Main {
 				}
 				else {
 					System.out.println("Delete Unsucessful");
+				}
+			}
+			else if (ch==4) {
+				System.out.println("Name of contact to be edited");
+				String name=sc.next();
+				
+		        System.out.print("Phone: ");
+		        String phone = sc.next();
+		        
+		        System.out.print("Email ");
+		        String email = sc.next();
+		        contacts edi = new contacts(name, phone, email);
+				if (mapping.edit(Username,name,edi)) {
+					System.out.println("Edited Successfully");
+				}
+				else {
+					System.out.println("Edit Unsucessful");
 				}
 			}
 			}
@@ -150,6 +168,7 @@ public class Main {
 			
 			
 		}
+		
 
 	}
 	}
