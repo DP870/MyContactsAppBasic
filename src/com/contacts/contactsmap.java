@@ -99,7 +99,7 @@ public void filter(String username,String fil) {
 	 
 	 for (int i = 0; i < listofcontacts.size(); i++) {
 	        contacts c = listofcontacts.get(i);
-	        if (c.getName().contains(fil)) {
+	        if (c.getTag().contains(fil)) {
 	            System.out.println(c);        
 	        }
 	 

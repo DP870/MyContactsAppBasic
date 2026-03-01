@@ -161,7 +161,7 @@ public class Main {
 
 			}
 			else if (ch==7) {
-				System.out.println("Filter the contacts by :");
+				System.out.println("Filter the contacts by tags:");
 				String fil=sc.next();
 				mapping.filter(Username, fil);
 
