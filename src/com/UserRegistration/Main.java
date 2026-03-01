@@ -1,10 +1,10 @@
 /*
  * My Contacts App Using Basic OOPS Concepts
- * UC8 - This use case allows the logged in user to perform bulk operations like deleting all contacts.
+ * UC9 - This use case allows the logged in user to perform search on their contacts list.
  * 
  * 
  * author Dhruv
- * version 8.0
+ * version 9.0
  * 
  */
 
@@ -87,6 +87,7 @@ public class Main {
 			System.out.println("3.Delete Contacts");
 			System.out.println("4.Update Contacts");
 			System.out.println("5.Delete all Contacts");
+			System.out.println("6.Search");
 			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
@@ -143,6 +144,12 @@ public class Main {
 				else {
 					System.out.println("Username does not exist");
 				}
+			}
+			else if (ch==6) {
+				System.out.println("Name of contact to be searched");
+				String sea=sc.next();
+				mapping.search(Username, sea);
+
 			}
 			}
 
