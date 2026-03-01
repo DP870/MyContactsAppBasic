@@ -17,6 +17,18 @@ public class contacts {
 
 	
 
+	public String getTag() {
+		return tag;
+	}
+
+
+
+	public void setTag(String tag) {
+		this.tag = tag;
+	}
+
+
+
 	public String getName() {
 		return name;
 	}
@@ -42,8 +54,7 @@ public class contacts {
 	}
 
 	public String toString() {
-    return name + " - " + phone + 
-           (email == null ? "" : (" | " + email));
+    return name + " - " + phone + email + (tag == null ? "" : (" | " + tag));
 }
 
 }

@@ -1,11 +1,11 @@
 /*
  * My Contacts App Using Basic OOPS Concepts
- * UC11 - This use case allows the logged in user to create tags for their contacts.
+ * UC12 - This use case allows the logged in user to update tags for their contacts.
  *
  * 
  * 
  * author Dhruv
- * version 11.0
+ * version 12.0
  * 
  */
 
@@ -90,6 +90,7 @@ public class Main {
 			System.out.println("5.Delete all Contacts");
 			System.out.println("6.Search");
 			System.out.println("7.Filter");
+			System.out.println("8.Update Tags");
 			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
@@ -101,7 +102,7 @@ public class Main {
 		        String phone = sc.next();
 		        System.out.print("Email: ");
 		        String email = sc.next();
-		        System.out.print("Tag: ");
+		        System.out.print("Tag (NA if no tag): ");
 		        String tag = sc.next();
 		
 		        contacts newcontact = new contacts(name, phone, email,tag);
@@ -165,6 +166,15 @@ public class Main {
 				mapping.filter(Username, fil);
 
 			}
+			else if (ch==8) {
+				System.out.println("Name of the contact :");
+				String upd=sc.next();
+				System.out.println("New Tag :");
+				String newtag=sc.next();
+				
+				mapping.filter(Username, upd, newtag);
+
+			}
 			
 			
 			}
@@ -200,6 +210,9 @@ public class Main {
 			}
 			
 			
+		}
+		else {
+			loop=2;
 		}
 		
 
