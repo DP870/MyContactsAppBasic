@@ -1,10 +1,10 @@
 /*
  * My Contacts App Using Basic OOPS Concepts
- * UC9 - This use case allows the logged in user to perform search on their contacts list.
+ * UC10 - This use case allows the logged in user to perform filters by name on their contacts list.
  * 
  * 
  * author Dhruv
- * version 9.0
+ * version 10.0
  * 
  */
 
@@ -88,6 +88,7 @@ public class Main {
 			System.out.println("4.Update Contacts");
 			System.out.println("5.Delete all Contacts");
 			System.out.println("6.Search");
+			System.out.println("7.Filter");
 			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
@@ -149,6 +150,12 @@ public class Main {
 				System.out.println("Name of contact to be searched");
 				String sea=sc.next();
 				mapping.search(Username, sea);
+
+			}
+			else if (ch==7) {
+				System.out.println("Filter the contacts by :");
+				String fil=sc.next();
+				mapping.filter(Username, fil);
 
 			}
 			}

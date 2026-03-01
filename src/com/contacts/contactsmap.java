@@ -89,4 +89,24 @@ public void search(String username,String name) {
         
 }
 }
+// Filter
+public void filter(String username,String fil) {
+	 List<contacts> listofcontacts = savedcontacts.get(username);
+    
+	 if (listofcontacts == null) {
+    	System.out.println("No Contacts");
+    }
+	 
+	 for (int i = 0; i < listofcontacts.size(); i++) {
+	        contacts c = listofcontacts.get(i);
+	        if (c.getName().contains(fil)) {
+	            System.out.println(c);        
+	        }
+	 
+       
+}
+}
+
+
+
 }
