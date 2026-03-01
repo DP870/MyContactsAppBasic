@@ -56,9 +56,20 @@ public boolean edit(String username,String name,contacts updated) {      // Name
        
 }
 	return false;
-	
-
-	
-	
 	}
+
+//Bulk Operations
+public boolean bulk(String username) {
+     
+     List<contacts> listofcontacts = savedcontacts.get(username);
+     if (listofcontacts == null) {
+     	return false;
+     }
+     List<contacts> newlist = new ArrayList<>();
+     savedcontacts.put(username, newlist);     
+     return true;        
+         
+     
+    
+ }
 }

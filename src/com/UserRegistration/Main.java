@@ -1,10 +1,10 @@
 /*
  * My Contacts App Using Basic OOPS Concepts
- * UC4 - This use case allows the logged in user to view contact details.
+ * UC8 - This use case allows the logged in user to perform bulk operations like deleting all contacts.
  * 
  * 
  * author Dhruv
- * version 3.0
+ * version 8.0
  * 
  */
 
@@ -86,6 +86,7 @@ public class Main {
 			System.out.println("2.View Contacts");
 			System.out.println("3.Delete Contacts");
 			System.out.println("4.Update Contacts");
+			System.out.println("5.Delete all Contacts");
 			System.out.println("0. Exit");
 			
 			int ch=sc.nextInt();
@@ -132,6 +133,15 @@ public class Main {
 				}
 				else {
 					System.out.println("Edit Unsucessful");
+				}
+			}
+			
+			else if (ch==5) {
+				if (mapping.bulk(Username)) {
+					System.out.println("All contacts deleted.");
+				}
+				else {
+					System.out.println("Username does not exist");
 				}
 			}
 			}
