@@ -1,10 +1,11 @@
 /*
  * My Contacts App Using Basic OOPS Concepts
- * UC10 - This use case allows the logged in user to perform filters by name on their contacts list.
+ * UC11 - This use case allows the logged in user to create tags for their contacts.
+ *
  * 
  * 
  * author Dhruv
- * version 10.0
+ * version 11.0
  * 
  */
 
@@ -98,10 +99,12 @@ public class Main {
 		        String name = sc.next();
 		        System.out.print("Phone: ");
 		        String phone = sc.next();
-		        System.out.print("Email ");
+		        System.out.print("Email: ");
 		        String email = sc.next();
+		        System.out.print("Tag: ");
+		        String tag = sc.next();
 		
-		        contacts newcontact = new contacts(name, phone, email);
+		        contacts newcontact = new contacts(name, phone, email,tag);
 		       
 		        mapping.add(Username, newcontact);
 		
@@ -127,9 +130,13 @@ public class Main {
 		        System.out.print("Phone: ");
 		        String phone = sc.next();
 		        
-		        System.out.print("Email ");
+		        System.out.print("Email: ");
 		        String email = sc.next();
-		        contacts edi = new contacts(name, phone, email);
+		        
+		        System.out.print("Tag: ");
+		        String tag = sc.next();
+		        		        
+		        contacts edi = new contacts(name, phone, email,tag);
 				if (mapping.edit(Username,name,edi)) {
 					System.out.println("Edited Successfully");
 				}
@@ -158,6 +165,8 @@ public class Main {
 				mapping.filter(Username, fil);
 
 			}
+			
+			
 			}
 
 			System.out.println("Do you want to exit ?(0/1)");

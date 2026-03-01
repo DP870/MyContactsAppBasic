@@ -5,12 +5,14 @@ public class contacts {
     private String name;
     private String phone;
     private String email;
+    private String tag;
 
-    public contacts( String name, String phone, String email) {
+    public contacts( String name, String phone, String email,String tag) {
        
         this.name = name;
         this.phone = phone;
         this.email = email;
+        this.tag=tag;
     }
 
 	
